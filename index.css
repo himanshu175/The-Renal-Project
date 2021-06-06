@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+* html,
+* body {
+  width: 100%;
+  height: 100%;
+}
+
+* html .container-fluid,
+* body .container-fluid {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(120deg, #3498db, #8e44ad);
+}
+
+* html .container-fluid .container,
+* body .container-fluid .container {
+  width: 40%;
+  background: #fff;
+  border-radius: 15px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 40px 30px;
+}
+
+* html .container-fluid .container .heading h1,
+* body .container-fluid .container .heading h1 {
+  text-align: center;
+  line-height: 60px;
+}
+
+* html .container-fluid .container form .form-group input, * html .container-fluid .container form .form-group .form-control,
+* body .container-fluid .container form .form-group input,
+* body .container-fluid .container form .form-group .form-control {
+  border: none;
+  border-bottom: 1px solid #dddddd;
+  border-radius: 0px;
+  outline: none !important;
+  background: none;
+}
+
+@media (max-width: 992px) {
+  * html .container-fluid .container,
+  * body .container-fluid .container {
+    width: 45% !important;
+    height: 80vh;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+
+@media (max-width: 768px) {
+  * html .container-fluid .container,
+  * body .container-fluid .container {
+    width: 100% !important;
+    height: 80vh;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+
+@media (max-width: 768px) {
+  * html .container-fluid,
+  * body .container-fluid {
+    background: #fff;
+  }
+}
+/*# sourceMappingURL=index.css.map */

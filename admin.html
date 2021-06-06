@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="admin.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- font -->
+    <script src="https://kit.fontawesome.com/1f280ffe0a.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="row m-0 main-container w-100 d-flex justify-content-center">
+        <div class="left-var p-0" id="left-menu-bar">
+            <div class="profile-div">
+                <span class="close" onclick="closeBtn()"><i class="far fa-times-circle"></i></span>
+                <div class="imgs">
+                    <img src="813844_people_512x512.png" alt="DP">
+                </div>
+                <div class="name">
+                    <p class="para py-2">Admin</p>
+                    <h1 class="heading1 m-0 pb-2">Dr. Mark Hall</h1>
+                </div>
+            </div>
+            <div class="menu-div p-0">
+                <ul class="tab-nav mx-0">
+                    <li class="active"><i class="fas fa-users"></i> Permanent</li>
+                    <li class=""><i class="fas fa-procedures"></i> Patient</li>
+                    <li class=""><i class="fas fa-hospital-user"></i> Staff</li>
+                    <li class=""><i class="fas fa-user-md"></i> Doctor</li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <div class="col right-var p-0">
+            <div class="navbar d-flex justify-content-space-between align-items-center">
+                <div class="header-nav">
+                    <span class="menu-bar pl-1 pr-3" onclick="menuBtn()"><i class="fas fa-bars"></i></span> <span
+                        class="heading1">hospital management</span>
+                </div>
+                <button class="btn"><a href="http://127.0.0.1:5500/index.html">Logout</a></button>
+            </div>
+
+            <div class="staff-info active patient-table my-5">
+                <div class="row w-100 d-flex justify-content-center m-0">
+                    <div class="dash-details col-12 col-md-4">
+                        <div class="bg-tab text-light px-2 bg-danger d-flex justify-content-space-between ">
+                            <div class="logo">
+                                <img src="813844_people_512x512.png" alt="">
+                            </div>
+                            <div class="permanent">
+                                <h1 class="m-0">1</h1>
+                                <p class="m-0">Total Admin</p>
+                                <span>Dr. Mark Hall</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dash-details col-12 col-md-4">
+                        <div class="bg-tab text-light px-2 bg-warning d-flex justify-content-space-between ">
+                            <div class="logo ">
+                                <img src="822733_user_512x512.png" alt="">
+                            </div>
+                            <div class="permanent">
+                                <h1 class="m-0">1</h1>
+                                <p class="m-0">Total Doctor</p>
+                                <span>Dr. Finlay</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dash-details col-12 col-md-4">
+                        <div class="bg-tab text-light px-2 bg-primary d-flex justify-content-space-between ">
+                            <div class="logo">
+                                <img src="Profile-512.png" alt="">
+                            </div>
+                            <div class="permanent">
+                                <h1 class="m-0">1</h1>
+                                <p class="m-0">Total Staff</p>
+                                <span>Sam Weizak</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="staff-info patient-table">
+                <table class="table table-hover px-3" id="table-tag">
+                    <thead>
+                        <tr>
+                            <th> Name </th>
+                            <th> Symptoms </th>
+                            <th> Age </th>
+                            <th> Mobile </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div class="staff-info patient-table my-5">
+                <div class="form-input w-100">
+                    <form class="col-12">
+                        <div class="form-row">
+                            <div class="form-group col-lg-3">
+                                <label for="inputEmail4"> Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Staff Name">
+                            </div>
+                            <div class="form-group col-lg-3">
+                                <label for="inputPassword4">Age</label>
+                                <input type="number" class="form-control" id="age" placeholder="Staff Age">
+                            </div>
+                            <div class="form-group col-lg-3">
+                                <label for="inputAddress2">Address</label>
+                                <input type="text" class="form-control" id="symptoms" placeholder="Address">
+                            </div>
+                            <div class="form-group col-lg-3">
+                                <label for="inputAddress">Mobile</label>
+                                <input type="number" class="form-control" id="number" placeholder="10-digit number">
+                            </div>
+                        </div>
+                        <button type="entry" class="btn btn-primary" id="add">Add</button>
+                    </form>
+                    <table class="table table-hover mt-5 px-3" id="table">
+                        <thead>
+                            <tr>
+                                <th> Name </th>
+                                <th> Address </th>
+                                <th> Age </th>
+                                <th> Mobile </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+
+            <div class="staff-info patient-table my-5">
+                <div class="form-input w-100">
+                    <form class="col-12">
+                        <div class="form-row">
+                            <div class="form-group col-lg-3">
+                                <label for="inputEmail4"> Name</label>
+                                <input type="text" class="form-control" id="d-name" placeholder="Doctor Name">
+                            </div>
+                            <div class="form-group col-lg-3">
+                                <label for="inputPassword4">Department</label>
+                                <input type="number" class="form-control" id="d-age" placeholder="Doctor Department">
+                            </div>
+                            <div class="form-group col-lg-3">
+                                <label for="inputAddress2">Time</label>
+                                <input type="text" class="form-control" id="d-symptoms" placeholder="Time">
+                            </div>
+                            <div class="form-group col-lg-3">
+                                <label for="inputAddress">Mobile</label>
+                                <input type="number" class="form-control" id="d-number" placeholder="10-digit number">
+                            </div>
+                        </div>
+                        <button type="entry" class="btn btn-primary" id="d-add">Add</button>
+                    </form>
+                    <table class="table table-hover mt-5 px-3" id="d-table">
+                        <thead>
+                            <tr>
+                                <th> Name </th>
+                                <th> Department </th>
+                                <th> Age </th>
+                                <th> Mobile </th>
+                                <th> action </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+
+            <div class="marque navbar-light bg-primary">
+                <marquee attribute_name="attribute_value" class="text-light" id="marque">
+                    This is a Admin Portal "Dr. Mark Hall" manage this portal.
+                </marquee>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        const tabNavList = document.querySelectorAll('.tab-nav li');
+        const tabBody = document.querySelectorAll('.staff-info');
+
+        tabNavList.forEach((item, index, listArray) => {
+            item.addEventListener('click', () => {
+                if (item.classList.contains('active')) {
+                    return;
+                } else {
+                    document.querySelector('.active').classList.remove('active');
+                    item.classList.add('active');
+                }
+
+                if (listArray[0].classList.contains('active')) {
+                    tabBody[0].classList.add('active');
+                    tabBody[1].classList.remove('active');
+                    tabBody[2].classList.remove('active');
+                    tabBody[3].classList.remove('active');
+                }
+                if (listArray[1].classList.contains('active')) {
+                    tabBody[1].classList.add('active');
+                    tabBody[0].classList.remove('active');
+                    tabBody[2].classList.remove('active');
+                    tabBody[3].classList.remove('active');
+                }
+                if (listArray[2].classList.contains('active')) {
+                    tabBody[2].classList.add('active');
+                    tabBody[0].classList.remove('active');
+                    tabBody[1].classList.remove('active');
+                    tabBody[3].classList.remove('active');
+                }
+                if (listArray[3].classList.contains('active')) {
+                    tabBody[3].classList.add('active');
+                    tabBody[0].classList.remove('active');
+                    tabBody[1].classList.remove('active');
+                    tabBody[2].classList.remove('active');
+                }
+            })
+        });
+
+        let patients = localStorage.getItem("patients") || JSON.stringify([])
+        patients = JSON.parse(patients);
+        let displayTable = document.getElementById("table-tag");
+        patients.forEach((patient, index) => {
+            let newRow = displayTable.insertRow(index + 1);
+            const { patientName, patientSymptoms, patientAge, patientNumber } = patient;
+            let cell1 = newRow.insertCell(0);
+            let cell2 = newRow.insertCell(1);
+            let cell3 = newRow.insertCell(2);
+            let cell4 = newRow.insertCell(3);
+
+            cell1.innerHTML = patientName;
+            cell2.innerHTML = patientSymptoms;
+            cell3.innerHTML = patientAge;
+            cell4.innerHTML = patientNumber;
+        });
+
+
+        let ad = document.getElementById("add");
+        ad.addEventListener("click", details);
+        let Row = 1;
+        function details(e) {
+            e.preventDefault()
+            let name_name = document.getElementById("name").value;
+            let age_age = document.getElementById("age").value;
+            let symptoms_symptoms = document.getElementById("symptoms").value;
+            let number_number = document.getElementById("number").value;
+
+            let sections = localStorage.getItem("sections") || JSON.stringify([])
+            sections = JSON.parse(sections);
+            sections.push({ name_name, age_age, symptoms_symptoms, number_number });
+            localStorage.setItem("sections", JSON.stringify(sections))
+
+            if (!name_name || !age_age || !symptoms_symptoms || !number_number) {
+                alert("Please fill all the boxes");
+                return;
+            }
+            let table = document.getElementById("table");
+            let new_Row = table.insertRow(Row);
+            let cell1 = new_Row.insertCell(0);
+            let cell2 = new_Row.insertCell(1);
+            let cell3 = new_Row.insertCell(2);
+            let cell4 = new_Row.insertCell(3);
+
+            cell1.innerHTML = name_name;
+            cell2.innerHTML = age_age;
+            cell3.innerHTML = symptoms_symptoms;
+            cell4.innerHTML = number_number;
+
+            Row++;
+
+        }
+
+        let sections = localStorage.getItem("sections") || JSON.stringify([])
+        sections = JSON.parse(sections);
+        let table = document.getElementById("table");
+        sections.forEach((section, index) => {
+            let new_Row = table.insertRow(index + 1);
+            const { name_name, symptoms_symptoms, age_age, number_number } = section;
+            let cell1 = new_Row.insertCell(0);
+            let cell2 = new_Row.insertCell(1);
+            let cell3 = new_Row.insertCell(2);
+            let cell4 = new_Row.insertCell(3);
+
+            cell1.innerHTML = name_name;
+            cell2.innerHTML = symptoms_symptoms;
+            cell3.innerHTML = age_age;
+            cell4.innerHTML = number_number;
+        });
+
+        // doctor
+
+        let d_AddBtn = document.getElementById("d-add");
+        d_AddBtn.addEventListener("click", dDetails);
+        let dRow = 1;
+        function dDetails(e) {
+            e.preventDefault()
+            let dName = document.getElementById("d-name").value;
+            let dAge = document.getElementById("d-age").value;
+            let dSymptoms = document.getElementById("d-symptoms").value;
+            let dNumber = document.getElementById("d-number").value;
+
+            let dSections = localStorage.getItem("dSections") || JSON.stringify([])
+            dSections = JSON.parse(dSections);
+            dSections.push({dName, dAge, dSymptoms, dNumber });
+            localStorage.setItem("dSections", JSON.stringify(dSections))
+
+            if (!dName || !dAge || !dSymptoms || !dNumber) {
+                alert("Please fill all the boxes");
+                return;
+            }
+            let dTable = document.getElementById("d-table");
+            let dNew_Row = dTable.insertRow(dRow);
+            let cell1 = dNew_Row.insertCell(0);
+            let cell2 = dNew_Row.insertCell(1);
+            let cell3 = dNew_Row.insertCell(2);
+            let cell4 = dNew_Row.insertCell(3);
+
+            cell1.innerHTML = dName;
+            cell2.innerHTML = dAge;
+            cell3.innerHTML = dSymptoms;
+            cell4.innerHTML = dNumber;
+            dRow++;
+
+        }
+
+        let dSections = localStorage.getItem("dSections") || JSON.stringify([])
+        dSections = JSON.parse(dSections);
+        let dTable = document.getElementById("d-table");
+        dSections.forEach((dSection, index) => {
+            let dNew_Row = dTable.insertRow(index + 1);
+            const { dName, dSymptoms, dAge, dNumber } = dSection;
+            let cell1 = dNew_Row.insertCell(0);
+            let cell2 = dNew_Row.insertCell(1);
+            let cell3 = dNew_Row.insertCell(2);
+            let cell4 = dNew_Row.insertCell(3);
+            let cell5 = dNew_Row.insertCell(4);
+
+            cell1.innerHTML = dName;
+            cell2.innerHTML = dSymptoms;
+            cell3.innerHTML = dAge;
+            cell4.innerHTML = dNumber;
+            cell5.innerHTML = '<button onclick="delete__Btn('+index+')">Delete</button>';
+        });
+        
+        function delete__Btn(index) {
+            let dTable = document.getElementById("d-table");
+            dTable.deleteRow(index - 0);
+        }
+    </script>
+</body>
+
+</html>

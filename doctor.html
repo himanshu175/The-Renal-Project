@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor</title>
+    <link rel="stylesheet" href="doctor.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- font -->
+    <script src="https://kit.fontawesome.com/1f280ffe0a.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="row m-0 main-container w-100 d-flex justify-content-center">
+        <div class="left-var p-0" id="left-menu-bar">
+            <div class="profile-div">
+                <span class="close" onclick="closeBtn()"><i class="far fa-times-circle"></i></span>
+                <div class="imgs">
+                    <img src="90-512.png" alt="DP">
+                </div>
+                <div class="name">
+                    <p class="para py-2">Doctor</p>
+                    <h1 class="heading1 m-0 pb-2">Dr. Finlay</h1>
+                </div>
+            </div>
+            <div class="menu-div p-0">
+                <ul class="tab-nav mx-0">
+                    <li class=""><i class="fas fa-clipboard-list"></i> Dashboard</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col right-var p-0">
+            <div class="navbar d-flex justify-content-space-between align-items-center">
+                <div class="header-nav">
+                    <span class="menu-bar pl-1 pr-3" onclick="menuBtn()"><i class="fas fa-bars"></i></span> <span
+                        class="heading1">hospital management</span>
+                </div>
+                <button class="btn"><a href="http://127.0.0.1:5500/index.html">Logout</a></button>
+            </div>
+
+            <div class="staff-info patient-table my-5">
+                <table class="table table-hover px-3" id="table-tag">
+                    <thead>
+                        <tr>
+                            <th> Name </th>
+                            <th> Symptoms </th>
+                            <th> Age </th>
+                            <th> Mobile </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div class="marque navbar-light bg-primary">
+                <marquee attribute_name="attribute_value" class="text-light" id="marque">
+                    This is a Doctor Portal "Dr. Finlay" manage this portal.
+                </marquee>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        let patients = localStorage.getItem("patients") || JSON.stringify([])
+        patients = JSON.parse(patients);
+        let displayTable = document.getElementById("table-tag");
+        patients.forEach((patient, index) => {
+            let newRow = displayTable.insertRow(index + 1);
+            const { patientName, patientSymptoms, patientAge, patientNumber } = patient
+            let cell1 = newRow.insertCell(0);
+            let cell2 = newRow.insertCell(1);
+            let cell3 = newRow.insertCell(2);
+            let cell4 = newRow.insertCell(3);
+
+            cell1.innerHTML = patientName;
+            cell2.innerHTML = patientSymptoms;
+            cell3.innerHTML = patientAge;
+            cell4.innerHTML = patientNumber;
+        });
+    </script>
+</body>
+
+</html>
