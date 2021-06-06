@@ -7,14 +7,14 @@ function logBtn() {
     const doctor = document.getElementById("Doctor").value;
     const staff = document.getElementById("Staff").value;
 
-    if (admin == "Admin" && password == "123" && user == "admin") {
-        window.location = "http://127.0.0.1:5500/admin.html";
+     if (admin == "Admin" && password == "123" && user == "admin") {
+        window.location = "admin.html";
     }
     else if (user == "doctor" && doctor == "Doctor" && password == "123") {
-        window.location = "http://127.0.0.1:5500/doctor.html";
+        window.location = "doctor.html";
     }
     else if (user == "staff" && staff == "Staff" && password == "123") {
-        window.location = "http://127.0.0.1:5500/staff.html";
+        window.location = "staff.html";
     }
 };
 
